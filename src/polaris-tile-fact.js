@@ -18,10 +18,10 @@ class PolarisTileFact extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: grid;
+        display: gird;
         margin-top: 32px;
         margin-left: 40px;
-        background-color: grey;
+        background-color: black;
       }
       
       .type1Fact{ 
@@ -35,12 +35,11 @@ class PolarisTileFact extends LitElement {
         font-family: Roboto,"Franklin Gothic Medium",Tahoma,sans-serif;
         font-size: 32px;
         color: white;
-
       }
       .type2Fact{
         width: 336px;
         height: 280.8px;
-        background-color: white;
+        background-color: grey;
       }
       .type3Fact{
         width: 336px;

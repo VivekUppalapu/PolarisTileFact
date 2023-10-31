@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
 
-
 class PolarisTileFact extends LitElement {
   static get properties() {   
     return {
@@ -21,13 +20,13 @@ class PolarisTileFact extends LitElement {
 
   static get styles() {
     return css`
-
+      /* Overall box itself and it's design */
       :host {
         display: block;
         margin-left: 5px;
         margin-right: 5px;
       }
-
+/* The outerLayer property is the outer layer for each tile, making sure that they align properly and look like the website alignment */
       .outerLayer
       {
         display: grid;
@@ -36,12 +35,15 @@ class PolarisTileFact extends LitElement {
         margin-top: 32px;
         
       }
+      /* This the same thing as above, but for the multiline tiles(white) */
       .outerLayerML
       {
         display: grid;
         padding: 0 14% 0 14%;
 
       }
+      /* Each tileChange variable and type reflect the different tiles and their backgrounds */
+      /* type1 = Blue tile */
       :host([tileChange=type1]) 
       {
         width: 336px;
@@ -49,6 +51,8 @@ class PolarisTileFact extends LitElement {
         background-color: #1e407c;
 
       }
+      /* The textChange and text are the text configurations on the tile and there are only two variations
+      thus only having two different options */
      :host([textChange=text1])
       {
         font-size: 1.75rem;
@@ -57,6 +61,8 @@ class PolarisTileFact extends LitElement {
         font-family: Roboto,"Franklin Gothic Medium",Tahoma,sans-serif;
         color: white; 
       }
+      /* This tile change is for the multiline white background tiles */
+      /* type2 = white tiles */
       :host([tileChange=type2])
       {
         width: 336px;
@@ -64,6 +70,7 @@ class PolarisTileFact extends LitElement {
         background-color:white;
         
       }
+      /* Text to go along with it */
       :host([textChange=text2])
       {
         font-family: Roboto,"Franklin Gothic Medium",Tahoma,sans-serif;
@@ -71,19 +78,21 @@ class PolarisTileFact extends LitElement {
         color:  #001e44;
         font-weight: 900 px;
       }
+      /* Dark blue tile */
       :host([tileChange=type3])
       {
         width: 336px;
         height: 280.8px;
         background-color: #001e44;
       }
+      /* Graident blue */
       :host([tileChange=type4])
       {
         width: 336px;
         height: 280.8px;
         background: linear-gradient(180deg, rgba(30,64,124,1) 0%, rgba(0,30,68,1) 65%, rgba(0,30,68,1) 100%);
       }
-
+      /*Image 1*/
       :host([tileChange=type5])
       {
         width: 336px;
@@ -94,7 +103,7 @@ class PolarisTileFact extends LitElement {
         background-position: center;
         background-blend-mode: multiply;
       }
-      
+      /* Image 2 */
       :host([tileChange=type6])
       {
         width: 336px;
@@ -105,18 +114,21 @@ class PolarisTileFact extends LitElement {
         background-position: center;
         background-blend-mode: multiply;
       }
+      /* paragraph tag for multiline */
       .paraText{
         font-size: 1rem;
         font-weight: 400;
         color: #001e44;
         font-family: Roboto,"Franklin Gothic Medium",Tahoma,sans-serif;
       }
+      /* the line in multiline */
       .borderColor{
       margin-top: 1.35rem;
       margin-bottom: 1rem;
       background-color: #1e407c;
       height: 3px;
       }
+      /* linked to websites for the images */
       .link
       {
         font-family: Roboto,"Franklin Gothic Medium",Tahoma,sans-serif;
@@ -130,13 +142,25 @@ class PolarisTileFact extends LitElement {
 
   constructor() {
     super();
+    // textFact is the text to type
     this.textFact = '';
+
+    //tileChange is the change of tile
     this.tileChange = ''
+
+    //textChange is the change of text depending on the tile
     this.textChange = '';
+    //whether multiline is there or not
+
     this.multiline = false;
+    // whether link is there or not
     this.hasLink = false;
+
+    // inserting link
     this.link='';
-    this.paraText;
+
+    // paragraph text for multiline
+    this.paraText = '';
 
   }
 

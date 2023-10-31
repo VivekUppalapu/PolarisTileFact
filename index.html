@@ -7,11 +7,34 @@
   <meta name="Description" content="Put your description here.">
   <base href="/">
 
+  <style>
+    html,
+    body
+    {
+      background-color: lightgray;
+    }
+    .outerBox{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 8px;
+      max-width: 1000px;
+    }
+  </style>
   <title>polaris-tile-fact</title>
 </head>
 
 <body>
-  <polaris-tile-fact textFact1 = "80,000 students" textFact4 = "Studens from 50 states and 145 countries"></polaris-tile-fact>
+  <div class="outerBox">
+  <polaris-tile-fact tileChange="type1" textChange="text1" textFact="88,000+ students"></polaris-tile-fact>
+  <polaris-tile-fact  multiline=true tileChange="type2" textChange="text2"  textFact="58%"  paraText="Of students are Pennsylvania residents"></polaris-tile-fact>
+  <polaris-tile-fact tileChange="type4" textChange="text1" textFact="Students from 50 states and 145 countries"></polaris-tile-fact>
+  <polaris-tile-fact tileChange="type5" textChange="text1"  textFact="Check out Undergraduate Admissions statistics" hasLink=true link="https://admissions.psu.edu/apply/statistics" ></polaris-tile-fact>
+  <polaris-tile-fact tileChange="type1" textChange="text1" textFact="Nearly 10,000 international students"></polaris-tile-fact>
+  <polaris-tile-fact multiline=true tileChange="type2" textChange="text2" textFact="39%" paraText="Of students are from diverse backgrounds"></polaris-tile-fact>
+  <polaris-tile-fact tileChange="type3" textChange="text1" textFact="7,900+ faculty across all campuses"></polaris-tile-fact>
+  <polaris-tile-fact tileChange="type3" textChange="text1" textFact="759,000+ alumni"></polaris-tile-fact>
+  <polaris-tile-fact tileChange="type6" textChange="text1" textFact="See Penn State's Data Digest Boards" hasLink=true link="https://datadigest.psu.edu"></polaris-tile-fact>
+</div>
   <script type="module" src="./src/polaris-tile-fact.js"></script>
 </body>
 
